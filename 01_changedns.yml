@@ -1,10 +1,11 @@
 ---
 - hosts: domainmember
 
-- name: Change DNS for member servers
-  ansible.windows.win_dns_client:
-    adapter_names: "*"
-    dns_servers: 10.1.0.7
+  tasks:
+  - name: Change DNS for member servers
+    ansible.windows.win_dns_client:
+      adapter_names: "*"
+      dns_servers: 10.1.0.7
 
-- name: Reboot member servers
-  win_reboot:
+  - name: Reboot member servers
+    win_reboot:
