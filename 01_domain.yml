@@ -1,3 +1,4 @@
+---
 - hosts: domaincontroller
   vars:
     domain: ansible.local
