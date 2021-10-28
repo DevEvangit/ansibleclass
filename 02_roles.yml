@@ -2,6 +2,9 @@
 - hosts: linuxservers
   become: yes
 
+  vars:
+    name: jesper
+
   roles:
       - webserver
 
