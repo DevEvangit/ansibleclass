@@ -2,11 +2,28 @@
 - hosts: localhost
   connection: local
   vars:
-    user: jesbe
+
   tasks:
+  - name: Remove Demo Template
+    awx.awx.job_template:
+      name: "Demo Job Template"
+      organization: "Default"
+      state: absent
+
+  - name: Remove Demo credential
+    awx.awx.credential:
+      name: "Demo Credential"
+      organization: "Default"
+      state: absent
 
   - name: Remove Demo inventory
     awx.awx.inventory:
       name: "Demo Inventory"
+      organization: "Default"
+      state: absent
+
+  - name: Remove Demo project
+    awx.awx.project:
+      name: "Demo Project"
       organization: "Default"
       state: absent
