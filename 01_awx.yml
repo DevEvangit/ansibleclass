@@ -13,7 +13,6 @@
   - name: Remove Demo credential
     awx.awx.credential:
       name: Demo Credential
-      organization: Default
       credential_type: Machine
       state: absent
 
