@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  connection: local
+  vars:
+    user: jesbe
+  tasks:
+
+  - name: Remove Demo inventory
+    awx.awx.inventory:
+      name: "Demo Inventory"
+      organization: "Default"
+      state: absent
